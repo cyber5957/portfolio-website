@@ -1,0 +1,13 @@
+{
+  "name": "portfolio-website",
+  "private": true,
+  "workspaces": [
+    "client",
+    "server"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspace client",
+    "build": "npm run build --workspace client",
+    "start": "npm run start --workspace client"
+  }
+}

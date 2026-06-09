@@ -1,0 +1,272 @@
+/* stylelint-disable at-rule-no-unknown */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+:root {
+  color-scheme: dark;
+  font-synthesis: none;
+  --font-space-grotesk: 'Space Grotesk';
+  --font-inter: 'Inter';
+  --font-jetbrains-mono: 'JetBrains Mono';
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+[id] {
+  scroll-margin-top: 6rem;
+}
+
+:focus-visible {
+  outline: 2px solid rgba(56, 189, 248, 0.9);
+  outline-offset: 4px;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid rgba(56, 189, 248, 0.9);
+  outline-offset: 4px;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  background:
+    radial-gradient(circle at 20% 10%, rgba(30, 144, 255, 0.18), transparent 22%),
+    radial-gradient(circle at 80% 20%, rgba(14, 165, 233, 0.12), transparent 24%),
+    linear-gradient(180deg, #050816 0%, #06101d 45%, #04060d 100%);
+  color: #e5eefc;
+  text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3 {
+  overflow-wrap: break-word;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image: linear-gradient(rgba(30, 144, 255, 0.09) 1px, transparent 1px), linear-gradient(90deg, rgba(30, 144, 255, 0.09) 1px, transparent 1px);
+  background-size: 56px 56px;
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), transparent 92%);
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), transparent 92%);
+  opacity: 0.12;
+  z-index: -1;
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(circle at 20% 35%, rgba(30, 144, 255, 0.14) 0 1px, transparent 1.5px),
+    radial-gradient(circle at 55% 65%, rgba(30, 144, 255, 0.14) 0 1px, transparent 1.5px),
+    radial-gradient(circle at 80% 30%, rgba(30, 144, 255, 0.14) 0 1px, transparent 1.5px),
+    radial-gradient(circle at 15% 80%, rgba(30, 144, 255, 0.14) 0 1px, transparent 1.5px),
+    radial-gradient(circle at 92% 70%, rgba(30, 144, 255, 0.14) 0 1px, transparent 1.5px);
+  background-size: 400px 400px;
+  animation: drift 22s linear infinite;
+  opacity: 0.35;
+  z-index: -1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body::after {
+    animation: none;
+  }
+}
+
+/* Navbar micro-optimization helpers */
+.nav-progress {
+  transform-origin: left center;
+  will-change: transform;
+  transform: scaleX(0);
+}
+
+.nav-indicator {
+  will-change: transform, left, right;
+  transition: transform 260ms cubic-bezier(.2,.9,.2,1), opacity 160ms ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  html,
+  body {
+    cursor: none;
+  }
+
+  :where(a, button, [role='button'], input, textarea, select, summary) {
+    transition:
+      transform 180ms ease,
+      box-shadow 180ms ease,
+      border-color 180ms ease,
+      background-color 180ms ease,
+      color 180ms ease,
+      opacity 180ms ease,
+      filter 180ms ease;
+    will-change: transform;
+  }
+
+  :where(a, button, [role='button'], summary):hover {
+    transform: translateY(-1px);
+  }
+
+  :where(a, button, [role='button'], summary):active {
+    transform: translateY(0) scale(0.99);
+  }
+}
+
+.font-body {
+  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  font-weight: 400;
+}
+
+.font-logo {
+  font-family: var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.font-hero {
+  font-family: var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.07em;
+  line-height: 0.92;
+}
+
+.font-section {
+  font-family: var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+}
+
+.font-metric {
+  font-family: var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+}
+
+.font-button {
+  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.font-dashboard {
+  font-family: var(--font-jetbrains-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+.font-date {
+  font-family: var(--font-jetbrains-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+}
+
+.font-tech {
+  font-family: var(--font-jetbrains-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+.font-display {
+  font-family: var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+}
+
+@keyframes drift {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(-16px, 14px, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes credential-marquee {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@keyframes credential-scan {
+  0% {
+    transform: translate3d(-120%, 0, 0) skewX(-10deg);
+  }
+  100% {
+    transform: translate3d(260%, 0, 0) skewX(-10deg);
+  }
+}
+
+@keyframes credential-loop {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.credential-loop-track {
+  animation: credential-loop 52s linear infinite;
+  will-change: transform;
+}
+
+.credential-stream-track {
+  animation-name: credential-marquee;
+  animation-duration: var(--stream-duration, 40s);
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  will-change: transform;
+}
+
+.credential-stream-track[data-direction='reverse'] {
+  animation-direction: reverse;
+}
+
+.credential-stream-static {
+  animation: none !important;
+  transform: none !important;
+}
+
+.credential-card:hover .credential-scanline {
+  opacity: 1;
+  animation: credential-scan 1.6s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body::after {
+    animation: none;
+  }
+  .credential-loop-track,
+  .credential-stream-track,
+  .credential-card,
+  .credential-card:hover .credential-scanline {
+    animation: none !important;
+    transition: none !important;
+  }
+}

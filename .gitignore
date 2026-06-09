@@ -1,0 +1,11 @@
+node_modules
+dist
+.next
+client/.next
+.env
+.DS_Store
+Thumbs.db
+*.log
+client/.vite
+server/.env
+client/.env
