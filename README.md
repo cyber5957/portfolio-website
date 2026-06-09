@@ -1,3 +1,4 @@
+
 # Vinayak Cybersecurity Portfolio
 
 A modern dark cybersecurity portfolio built with Next.js 15, React, TypeScript, Tailwind CSS, and Framer Motion.
@@ -34,3 +35,6 @@ npm run build
 - The old Vite `client/src` and `client/dist` folders have been removed.
 - The design is fully responsive and uses glassmorphism, neon blue accents, animated dashboard cards, and a mobile hamburger menu.
 - Add your actual resume PDF to the `public` folder if you want the resume button to download a file instead of jumping to the resume section.
+=======
+# portfolio-website
+
